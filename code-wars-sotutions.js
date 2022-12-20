@@ -1,4 +1,4 @@
-// Copy/Pastfunction solution(number) {
+function solution(number) {
   let sum = 0;
 
   if (number < 0) {
