@@ -127,4 +127,28 @@ A - initialize new array
   - for each num that =! 0, push into new array
   - iterate again, for each 
   - return new array
-*/
+
+
+//6
+function duplicateCount(text){
+  let obj = {};
+  let count = 0;
+  text = text.toLowerCase();
+
+  for (let i = 0; i < text.length; i++) {
+    if (text[i] in obj) {
+      obj[text[i]]++
+   } else {
+     obj[text[i]] = 1
+  }
+  }
+ console.log(obj);
+  for (key in obj) {
+    if (obj[key] !== 1) count++
+  }
+  return count;
+}
+
+
+console.log(duplicateCount("MarcyLabFellowship"))
+// console.log(obj)
