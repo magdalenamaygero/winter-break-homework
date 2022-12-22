@@ -5,7 +5,7 @@ function solution(number) {
   if (number < 0) {
     return 0;
   }
- 
+
   for (let i = 0; i < number; i++) {
     if (i % 3 === 0 || i % 5 === 0) {
       sum += i;
@@ -30,10 +30,10 @@ a: input number. initialize sum. iterate through num.
 //2
 function likes(names) {
   return names.length === 0 ? "no one likes this" :
-  names.length === 1 ? `${names[0]} likes this` :
-  names.length === 2 ? `${names[0]} and ${names[1]} like this` :
-  names.length === 3 ? `${names[0]}, ${names[1]} and ${names[2]} like this` :
-  `${names[0]}, ${names[1]} and ${names.length - 2} others like this`
+    names.length === 1 ? `${names[0]} likes this` :
+    names.length === 2 ? `${names[0]} and ${names[1]} like this` :
+    names.length === 3 ? `${names[0]}, ${names[1]} and ${names[2]} like this` :
+    `${names[0]}, ${names[1]} and ${names.length - 2} others like this`
 }
 
 /*
@@ -53,10 +53,11 @@ A - if length = 0, return "no one likes this"
 
 //3
 function findUniq(arr) {
-  arr.sort((one, two) => one-two);
+  arr.sort((one, two) => one - two);
   if (arr[0] !== arr[1]) {
     return arr[0]
-  } else {
+  }
+  else {
     return arr[arr.length - 1]
   }
 };
@@ -84,7 +85,7 @@ A - arr.sort();
 */
 
 //4
-function findOutlier(integers){
+function findOutlier(integers) {
   const even = integers.filter(element => element % 2 === 0)
   const odd = integers.filter(element => element % 2 !== 0)
   if (even.length === 1) return even[0]
@@ -94,7 +95,7 @@ function findOutlier(integers){
 /*
 P - given array of nums (all even or all odd, except 1)
 E - [2, 4, 0, 100, 4, 11, 2602, 36]
-  Should return: 11 (the only odd number)
+    Should return: 11 (the only odd number)
 A - (initialize even variable, initialize odd variable)
     let even = integers.filter(element => element % 2 === 0)
     let odd = integers.filter(element => element % 2 !== 0)
@@ -107,7 +108,8 @@ function moveZeros(arr) {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] !== 0) {
       newArr.push(arr[i]);
-    } else {
+    }
+    else {
       onlyZeros.push(arr[i]);
     }
   }
@@ -127,10 +129,10 @@ A - initialize new array
   - for each num that =! 0, push into new array
   - iterate again, for each 
   - return new array
-
+*/
 
 //6
-function duplicateCount(text){
+function duplicateCount(text) {
   let obj = {};
   let count = 0;
   text = text.toLowerCase();
@@ -138,17 +140,32 @@ function duplicateCount(text){
   for (let i = 0; i < text.length; i++) {
     if (text[i] in obj) {
       obj[text[i]]++
-   } else {
-     obj[text[i]] = 1
+    }
+    else {
+      obj[text[i]] = 1
+    }
   }
-  }
- console.log(obj);
   for (key in obj) {
-    if (obj[key] !== 1) count++
+    if (obj[key] !== 1) count++;
   }
   return count;
 }
 
 
-console.log(duplicateCount("MarcyLabFellowship"))
+// console.log(duplicateCount("MarcyLabFellowship"))
 // console.log(obj)
+
+/*
+P -  return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string
+E - "aA11" -> 2 # 'a' and '1'
+    "ABBA" -> 2 # 'A' and 'B' each occur twice
+D - string, object
+A - initialize empty object and a counter
+  - make text toLowerCase
+  - iterate through array
+  - if the curr char is in the object, increment it by 1
+  - if not, add the value 1
+  - loop through object
+  - if the letter's value is not 1, increment the count
+  - return count
+*/
