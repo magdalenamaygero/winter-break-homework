@@ -1,3 +1,4 @@
+//1 
 function solution(number) {
   let sum = 0;
 
@@ -26,6 +27,7 @@ a: input number. initialize sum. iterate through num.
    return sum 
 */
 
+//2
 function likes(names) {
   return names.length === 0 ? "no one likes this" :
   names.length === 1 ? `${names[0]} likes this` :
@@ -49,6 +51,7 @@ A - if length = 0, return "no one likes this"
     else :  = 4, `${names[0]}, ${names[1]} and ${names.length - 2} others like this` 
 */
 
+//3
 function findUniq(arr) {
   arr.sort((one, two) => one-two);
   if (arr[0] !== arr[1]) {
@@ -59,11 +62,12 @@ function findUniq(arr) {
 };
 
 
-function findUniq(arr) {
-  arr.sort((one, two) => one-two);
-  return (arr[0] !== arr[1]) ? arr[0] :
-  arr[arr.length - 1]
-}
+//3
+// function findUniq(arr) {
+//   arr.sort((one, two) => one-two);
+//   return (arr[0] !== arr[1]) ? arr[0] :
+//   arr[arr.length - 1]
+// }
 
 
 /*
@@ -79,6 +83,7 @@ A - arr.sort();
     }
 */
 
+//4
 function findOutlier(integers){
   const even = integers.filter(element => element % 2 === 0)
   const odd = integers.filter(element => element % 2 !== 0)
@@ -93,4 +98,33 @@ E - [2, 4, 0, 100, 4, 11, 2602, 36]
 A - (initialize even variable, initialize odd variable)
     let even = integers.filter(element => element % 2 === 0)
     let odd = integers.filter(element => element % 2 !== 0)
+*/
+
+//5
+function moveZeros(arr) {
+  let newArr = [];
+  let onlyZeros = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] !== 0) {
+      newArr.push(arr[i]);
+    } else {
+      onlyZeros.push(arr[i]);
+    }
+  }
+  return newArr.concat(onlyZeros);
+}
+
+
+/*
+P - input array of elements, return an array with all the 0' at the end of the array
+E - oveZeros([false,1,0,1,2,0,1,3,"a"]) // returns[false,1,1,2,1,3,"a",0,0]
+D - array
+A - initialize new array
+  - iterate though array
+  - for each 0, push it to the end
+  - or
+  - iterate through array
+  - for each num that =! 0, push into new array
+  - iterate again, for each 
+  - return new array
 */
