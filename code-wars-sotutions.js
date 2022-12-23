@@ -169,3 +169,31 @@ A - initialize empty object and a counter
   - if the letter's value is not 1, increment the count
   - return count
 */
+
+//7
+function pigIt(str) {
+  let array = str.split(' ');
+  let pigLatin = [];
+
+  for (let word of array) {
+    if ((/([a-zA-Z])/).test(word)) {
+      pigLatin.push(word.substring(1) + word[0] + "ay");
+    }
+    else {
+      pigLatin.push(word);
+    }
+  }
+  return pigLatin.join(" ");
+}
+
+/*
+P - move first letter of each word to the end of the word. add "ay" to the end of the word (leave punctuation)
+E - pigIt('Pig latin is cool'); // igPay atinlay siay oolcay
+    pigIt('Hello world !');     // elloHay orldway !
+D - string, array
+A - split string into array, initialize empty array
+  - iterate through words of array, 
+  - if regex matches to only alphabets, push the first index to the end of the word and add "ay"
+  - else push into new array
+  - return array joined to string
+*/
